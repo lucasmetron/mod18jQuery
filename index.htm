@@ -8,39 +8,27 @@
     <title>Jquery</title>
 </head>
 
+<style>
+    #square{
+        width: 300px;
+        height: 300px;
+        background-color: red;
+        margin-top: 10px;
+        /* display: none; */
+    }
+</style>
+
 <body>
 
-    <h1 class="titulo">Esse é um título H1</h1>
-
-    <h1 id="nao" style="display: none">NÃO SAIAAAAA</h1>
-
+    <button id="button"> Testar</button>
+    <div id="square"> </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
     <script>
-        $('.titulo').click(()=>{
-            console.log("click")
+        $('#button').click(()=>{
+            $('#square').animate({width: 500, height:500}, 3000)
+            console.log()
         })
-
-        $('.titulo').mouseenter(()=>{
-            console.log("mouse enter")
-        })
-
-        $(document).mouseleave(()=>{
-            $('#nao').show();
-        })
-
-        $('.titulo').dblclick(()=>{
-            console.log("Double click")
-        })
-
-        // //mesma coisa em js vanilha
-        // let teste = document
-        // console.log(teste)
-
-        // teste.addEventListener("mouseout", () => {
-        //     let grito = document.querySelector('#nao')
-        //     grito.style = 'display: block'
-        // })
-
     </script>
 </body>
 
