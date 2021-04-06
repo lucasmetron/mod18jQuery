@@ -9,26 +9,55 @@
 </head>
 
 <style>
-    #square{
+    #red{
         width: 300px;
         height: 300px;
         background-color: red;
-        margin-top: 10px;
-        /* display: none; */
+        display: none;
+        position: absolute;
+        
+    }
+
+    #green{
+        height: 200px;
+        width: 200px;
+        background-color: green;
+        position: absolute;
+        
     }
 </style>
 
 <body>
 
     <button id="button"> Testar</button>
-    <div id="square"> </div>
+    <div id="green"></div>
+    <div id="red"> </div>
+
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     
     <script>
+        let mostraGreen = () =>{
+            
+            $('#red').hide(2000, ()=>{
+                console.log("Red Escondido")
+                $('#green').show(2000)
+            })
+        }
+
+        let mostraRed = () =>{
+            console.log('green escondido')
+            $('#red').show(2000, mostraGreen)
+        }
+        let callback = () =>{
+            console.log("green escondido")
+            
+        }
+
         $('#button').click(()=>{
-            $('#square').animate({width: 500, height:500}, 3000)
-            console.log()
-        })
+            $('#green').hide(2000, mostraRed);
+            
+        }) 
     </script>
 </body>
 
