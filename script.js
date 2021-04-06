@@ -1,17 +1,12 @@
-let jq = $('#lista1');
+console.log($('#lista1').text()); //Pega o conteu dendo das tags com fechamento
 
-console.log(jq.slideUp(2000).slideDown(1000).fadeOut().fadeIn())
+console.log($('#lista1').html()); // Pega a tag inteira com o HTML
 
-let objeto = {
-    print10: function (){
-        console.log(10)
-        return this;
-    },
+console.log($('#novo').val()) // Pega os valores de inputs
 
-    print20: function (){
-        console.log(20)
-        return this;
-    }
-}
 
-objeto.print10().print10().print20().print10()
+let teste = $('#lista1').children('.item2')[0]
+
+console.log(teste)
+
+
