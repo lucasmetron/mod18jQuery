@@ -16,37 +16,38 @@
 
 <body>
 
-    <div>
-        <div id="div1">Div 1</div>
-        <div id="div2">Div 2</div>
-        <div id="div3">Div 3</div>
-        <div id="div4">Div 4</div>
-        <div id="div5">Div 5</div>
+    <div id="conteiner1">
+
+        <div class="div1" id="div1">Div 1</div>
+        <div class="div2" id="div2">Div 2</div>
+        <div class="div1" id="div3">Div 3</div>
+        <div class="div2" id="div4">Div 4</div>
+        <div class="div1" id="div5">Div 5</div>
+
     </div>
 
-    
-    <div>
-        <div id="div1">Div 6</div>
-        <div id="div2">Div 7</div>
-        <div id="div3">Div 8</div>
-        <div id="div4">Div 9</div>
-        <div id="div5">Div 10</div>
+    <div id="conteiner2">
+        <div class="div2" id="div6">Div 6</div>
+        <div class="div1" id="div7">Div 7</div>
+        <div class="div2" id="div8">Div 8</div>
+        <div class="div1" id="div9">Div 9</div>
+        <div class="div2" id="div10">Div 10</div>
+
     </div>
 
     <script>
-        let selected = $('#div3')
-        
-        
-        console.log(selected.siblings() )//Mostra todos irmaos de div3 menos a div3 (div1,2,4,5)
-        console.log(selected.siblings('#div4'))//Procura nos irmãos da div3 a div4 e trás somente ela
-        console.log(selected.nextAll())//Pega os elementos depois da div3 (div4 e 5)
-        console.log(selected.nextAll('#div5'))// Pega o elemento especifico depois da div3, se não estiver depois ele nao pega
-        console.log(selected.next()) //Pega o primeiro elemento após a div3 (div4)
-        console.log(selected.prev())//Pega o primeiro elemento antes da div3 (div2)
-        console.log(selected.prevAll())//Pega todos os elementos antes da div3 (div2 e 1)
-        console.log($('#div1').nextUntil('#div4'))// Pega os elementos entre div1 e div4 (div2,div3)
-        console.log($('#div5').prevUntil('#div1')); //Pega todos elementos antes do div5 e depois da div1 (div4, 3 e 2)
 
+        console.log($('div').filter('.div1')) //filtra dentro de todas as divs, somente aquela que tem a classe div1 (div1,3,5,7,9)
+
+        console.log($('#conteiner1').children().filter('.div1')) //Pegando somente as divs filhas de conteiner1 (div1, 3, 5)
+
+        console.log($('#conteiner2').children().first()) //Só o primeiro elemento dos filhos de conteiner2
+
+        console.log($('#conteiner2').children().last()) //Só o ultimo elemento dos filhos de conteiner2
+
+        console.log($('#conteiner2').children().not('#div8')) //Pega todos elementos de conteiner2 menos o id div8
+
+        console.log($('#conteiner2').children().eq(3)) //Pega dentro da array conteiner2 (todas as divs que vieram) apenas a div na posição 3 (div9)
     </script>
 
     <script src="./script.js"></script>
