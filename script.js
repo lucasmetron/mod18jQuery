@@ -1,11 +1,5 @@
 
-console.log($('[key=2]').remove()) //  Selecionando a key por [] e depois removendo da lista
-
-
-$('#lista1').children('[key = 2]').remove() 
-
-$('#lista1').remove() // Remove a lista toda
-
-$('#lista1').empty(); //A tag Ul ainda existe pois esta função só remove os filhos dela
-
-$('li').remove('.item2, .item3') //Selecionando todos os LIs, a função remove pode receber parametros para apagar item especificos
+$('#lista1').append('<li class=item>Item 6</li>') //add item no final da lista
+$('#lista1').prepend('<li class=item >Item 0</li>') //add item no inicio da lista
+$('#lista1').before('<li class=item >Item 0</li>') // add item antes da UL lista1, ou seja fora da ul
+$('#lista1').after('<li class=item >Item 0</li>')// add item depois da UL lista1, ou seja fora da ul
