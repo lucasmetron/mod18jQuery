@@ -1,11 +1,28 @@
+setTimeout(() => {
+    $('h1').addClass('bg-blue') // add uma classe para uma tag
+}, 1000); 
 
-// $('#lista1').append('<li class=item>Item 6</li>') //add item no final da lista
-// $('#lista1').prepend('<li class=item >Item 0</li>') //add item no inicio da lista
-// $('#lista1').before('<li class=item >Item 0</li>') // add item antes da UL lista1, ou seja fora da ul
-// $('#lista1').after('<li class=item >Item 0</li>')// add item depois da UL lista1, ou seja fora da ul
 
-$('#lista1').append('<li> item 6</li>')
+setTimeout(() => {
+    $('h1').removeClass('bg-blue') //remove uma classe de uma tag
+}, 2000);
 
-let lis = document.getElementsByTagName('li')
+setTimeout(()=>{
+    $('h1').toggleClass('bg-blue') //se houver a classe ele remove e se nao houver ele adiciona
+},1000)
 
-console.log(lis[5].className ='item item6')
+
+setTimeout(()=>{
+    $('h1').toggleClass('bg-blue') //se houver a classe ele remove e se nao houver ele adiciona
+},3000)
+
+
+$('h1').addClass('bg-blue')
+console.log($('h1').css('background-color')) //O metodo css, se estiver só com 1 parametro, ele mostra os detalhes do parametro passado
+$('h1').css('font-size','50px') //com 2 métodos ele altera o primeiro método conforme o segundo método
+$('h1').css('background-color','rgb(200,0,200)')//com 2 métodos ele altera o primeiro método conforme o segundo método
+$('h1').css('background-color','pink')//com 2 métodos ele altera o primeiro método conforme o segundo método
+
+$('h1').css('background-color','red').css('font-size', '50px').css('color', 'white') //encadeamento do método CSS
+
+$('h1').css({'background-color':'yellow', 'font-size': '40px', 'color':'orange'})// outra maneira de encadeamento do método CSS
