@@ -1,3 +1,11 @@
-.bg-blue{
-    background-color: purple;
+.box{
+    /* box-sizing: border-box; */
+    width: 400px;
+    background-color: gray;
+    padding: 10px;
+    border: 10px solid black;
+    margin: 15px;
+    color: white;
+
+    font-size: 20px;
 }
