@@ -16,14 +16,39 @@
 
 <body>
 
+    <div>
+        <div id="div1">Div 1</div>
+        <div id="div2">Div 2</div>
+        <div id="div3">Div 3</div>
+        <div id="div4">Div 4</div>
+        <div id="div5">Div 5</div>
+    </div>
 
-
-    <div class="box"></div>
     
+    <div>
+        <div id="div1">Div 6</div>
+        <div id="div2">Div 7</div>
+        <div id="div3">Div 8</div>
+        <div id="div4">Div 9</div>
+        <div id="div5">Div 10</div>
+    </div>
 
+    <script>
+        let selected = $('#div3')
+        
+        
+        console.log(selected.siblings() )//Mostra todos irmaos de div3 menos a div3 (div1,2,4,5)
+        console.log(selected.siblings('#div4'))//Procura nos irmãos da div3 a div4 e trás somente ela
+        console.log(selected.nextAll())//Pega os elementos depois da div3 (div4 e 5)
+        console.log(selected.nextAll('#div5'))// Pega o elemento especifico depois da div3, se não estiver depois ele nao pega
+        console.log(selected.next()) //Pega o primeiro elemento após a div3 (div4)
+        console.log(selected.prev())//Pega o primeiro elemento antes da div3 (div2)
+        console.log(selected.prevAll())//Pega todos os elementos antes da div3 (div2 e 1)
+        console.log($('#div1').nextUntil('#div4'))// Pega os elementos entre div1 e div4 (div2,div3)
+        console.log($('#div5').prevUntil('#div1')); //Pega todos elementos antes do div5 e depois da div1 (div4, 3 e 2)
 
+    </script>
 
-    
     <script src="./script.js"></script>
 
 </body>
